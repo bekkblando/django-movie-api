@@ -28,10 +28,10 @@ class DeleteViewTests(TestCase):
         self.stripes = Movie.objects.create(title="stripes")
 
     def test_delete_view_will_delete_individual_movie(self):
-        response = self.client.get("/movie_list/")
+        response = self.client.get("/movie/")
         self.assertTrue("Top gun" in str(response.content))
 
-        delete_response = self.client.post(reverse("delete_movie", kwargs={"pk": self.top_gun.pk}))
+        delete_response = self.client.delete(reverse("delete_movie", kwargs={"pk": self.top_gun.pk}))
 
         response = self.client.get("/movie_list/")
         self.assertFalse("Top gun" in str(response.content))

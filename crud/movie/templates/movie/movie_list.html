@@ -10,7 +10,7 @@
 
 {% for movie in object_list %}
     <div><a href="{% url 'movie_detail' movie.id %}">{{ movie.title }}</a>
-        <form method="POST" action="{% url 'delete_movie' movie.id %}">
+        <form method="POST" action="{% url 'movie' movie.id %}">
             {% csrf_token %}
         <button type="submit">Delete</button>
         </form>
