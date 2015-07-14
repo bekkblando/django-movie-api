@@ -31,7 +31,7 @@ class MovieView(View):
     def post(self, request, *args, **kwargs):
         m = Movie.objects.create(title=request.REQUEST['title'])
         m.save()
-        return HttpResponse(status=200)
+        return HttpResponse(status=201)
 
     def patch(self, request, *args, **kwargs):
         movie = Movie.objects.get(id=kwargs['pk'])
