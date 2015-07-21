@@ -19,6 +19,7 @@ from django.contrib import admin
 from movie.views import MovieListView, MovieView, MovieDetailView
 
 urlpatterns = [
+    url(r'^movie_api/', include('movie_api.url')),
     url(r'^movie_list/', MovieListView.as_view(), name="movie_list"),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^movie/(?P<pk>\d)/',MovieView.as_view(), name="movie"),

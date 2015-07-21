@@ -29,7 +29,7 @@ class MovieView(View):
         return super().dispatch(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-        m = Movie.objects.create(title=request.REQUEST['title'])
+        m = Movie.objects.create(title=request.POST['title'])
         m.save()
         return HttpResponse(status=201)
 
