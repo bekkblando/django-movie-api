@@ -1,3 +1,5 @@
+Learned about the mechanics of handeling Protocal Verbs.
+Learned why I should use Django Rest Framework
 # Django Movie API
 
 ## Description
